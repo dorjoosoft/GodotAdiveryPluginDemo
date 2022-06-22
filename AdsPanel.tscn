@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://AdsPanel.gd" type="Script" id=1]
+[ext_resource path="res://calibrii.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://tahoma.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.945098, 0.945098, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+
+[node name="AdsPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="BtnRewardAd" type="Button" parent="."]
+anchor_left = 0.71582
+anchor_top = 0.0766667
+anchor_right = 0.94043
+anchor_bottom = 0.186667
+custom_fonts/font = SubResource( 1 )
+text = "Rewarded video"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LblRewarded" type="Label" parent="BtnRewardAd"]
+anchor_left = 0.026087
+anchor_top = 1.27273
+anchor_right = 0.978261
+anchor_bottom = 1.93939
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Reward result"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BtnInterstitial" type="Button" parent="."]
+anchor_left = 0.722656
+anchor_top = 0.381667
+anchor_right = 0.947266
+anchor_bottom = 0.491667
+custom_fonts/font = SubResource( 1 )
+text = "Interstitial "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BtnNativeBannerAction" type="Button" parent="."]
+anchor_left = 0.09375
+anchor_top = 0.783333
+anchor_right = 0.392578
+anchor_bottom = 0.893333
+custom_fonts/font = SubResource( 1 )
+text = "BtnNativeBanner Action "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BtnNative" type="Button" parent="."]
+anchor_left = 0.0947266
+anchor_top = 0.0516667
+anchor_right = 0.319336
+anchor_bottom = 0.161667
+custom_fonts/font = SubResource( 1 )
+text = "Native banner"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BtnNative"]
+anchor_left = -0.36087
+anchor_top = 1.89394
+anchor_right = 1.65652
+anchor_bottom = 6.5
+margin_left = 2.38419e-07
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="lblNativeAd" type="Label" parent="BtnNative"]
+anchor_left = -2.86087
+anchor_top = 0.969697
+anchor_right = -1.73043
+anchor_bottom = 1.63636
+margin_left = 636.0
+margin_top = 15.0
+margin_right = 636.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Native banner result"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="BtnNative"]
+margin_left = 254.0
+margin_top = -10.0
+margin_right = 382.0
+margin_bottom = 111.0
+expand = true
+
+[connection signal="pressed" from="BtnRewardAd" to="." method="_on_btnRewardAd_pressed"]
+[connection signal="pressed" from="BtnInterstitial" to="." method="_on_BtnInterstitial_pressed"]
+[connection signal="pressed" from="BtnNativeBannerAction" to="." method="_on_BtnNativeBannerAction_pressed"]
+[connection signal="pressed" from="BtnNative" to="." method="_on_BtnNative_pressed"]

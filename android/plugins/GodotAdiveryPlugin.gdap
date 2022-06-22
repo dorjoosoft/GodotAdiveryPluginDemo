@@ -1,0 +1,13 @@
+[config]
+
+name="GodotAdiveryPlugin"
+binary_type="local"
+binary="godotadiveryplugin-release.aar"
+
+[dependencies]
+
+remote=["com.adivery:sdk:4.2.3"]
+
+
+
+
